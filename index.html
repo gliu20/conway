@@ -1,0 +1,142 @@
+<meta charset="utf-8">
+
+<button onclick="spawnLine()">Spawn Line</button>
+<button onclick="randomDisturbance()">Random disturb</button>
+<button onclick="step()">Step</button>
+<button onclick="playPause()">Play/Pause</button>
+
+
+<script src="conway2.js"></script>
+
+
+<script>
+
+/*
+
+
+		"░".repeat(WIDTH),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█".repeat(size)+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat((size-12) / 2)+"█".repeat(10)+"░".repeat((size-12) / 2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█".repeat(size)+"░".repeat(Math.floor((WIDTH-size)/2)),
+		"░".repeat(WIDTH),
+*/
+var WIDTH = 100;
+var HEIGHT = 100;
+
+var isRunning = false;
+
+var offsetX = WIDTH / 2;
+var offsetY = HEIGHT / 2;
+
+var worldModel = new World(WIDTH,HEIGHT);
+
+	var size = Math.floor(Math.PI * WIDTH / 10);
+
+function spawnLine () {
+	var draw = [
+		"░".repeat(Math.floor((WIDTH-size)/2))+"█".repeat(size)+"░".repeat(Math.floor((WIDTH-size)/2)),
+	].map((ele) => ele.split(""))
+	
+	for (var y = 0; y < draw.length; y++) {
+		for (var x = 0; x < draw[y].length; x++) {
+			worldModel.setTile(x,y+offsetY-25,draw[y][x] === "█");
+		}
+	}
+	
+	worldModel.draw();
+}
+
+
+function spawnBorder () {
+	for (var y = 0; y < HEIGHT; y++) {
+	
+		worldModel.setTile(1,y,false);
+		worldModel.setTile(WIDTH - 2,y,false);
+		
+		worldModel.setTile(0,y,true);
+		worldModel.setTile(WIDTH - 1,y,true);
+	}
+	
+	
+	for (var x = 0; x < WIDTH; x++) {
+		worldModel.setTile(x,1,false);
+		worldModel.setTile(x,HEIGHT - 2,false);
+		
+		worldModel.setTile(x,0,true);
+		worldModel.setTile(x,HEIGHT - 1,true);
+		
+	}
+	worldModel.draw();
+}
+
+function randomDisturbance () {
+	for (var i = 0; i < Math.floor(Math.random() * WIDTH * HEIGHT * 0.38); i++)
+		worldModel.setTile(Math.floor(Math.random() * WIDTH),Math.floor(Math.random() * HEIGHT),true);
+		
+	worldModel.draw();
+}
+
+function step () {
+	worldModel.update();
+	worldModel.draw();
+}
+
+function playPause () {
+	isRunning = !isRunning;
+}
+
+
+function update () {
+	
+	if (isRunning) {
+		step();
+		//randomDisturbance();
+		spawnBorder();
+	}
+	
+	requestAnimationFrame(update)
+	
+}
+
+update();
+
+</script>
