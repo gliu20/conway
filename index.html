@@ -59,8 +59,8 @@
 		"░".repeat(Math.floor((WIDTH-size)/2))+"█".repeat(size)+"░".repeat(Math.floor((WIDTH-size)/2)),
 		"░".repeat(WIDTH),
 */
-var WIDTH = 100;
-var HEIGHT = 100;
+var WIDTH = 1000;
+var HEIGHT = 1000;
 
 var isRunning = false;
 
@@ -129,8 +129,6 @@ function update () {
 	
 	if (isRunning) {
 		step();
-		//randomDisturbance();
-		spawnBorder();
 	}
 	
 	requestAnimationFrame(update)
