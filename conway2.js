@@ -100,6 +100,7 @@ function World (w,h) {
 	
 	canvas.width = w;
 	canvas.height = h;
+	canvas.style = "image-rendering: crisp-edges;";
 	
 	ctx = canvas.getContext("2d");
 	
