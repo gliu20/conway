@@ -1,2 +1,2 @@
 # Conway
-A simulator for John Conway's game of life
+A simple simulator for John Conway's game of life written using native web technologies
