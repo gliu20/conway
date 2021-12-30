@@ -6,59 +6,11 @@
 <button onclick="playPause()">Play/Pause</button>
 
 
-<script src="conway2.js"></script>
+<script src="conway.js"></script>
 
 
 <script>
 
-/*
-
-
-		"░".repeat(WIDTH),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█".repeat(size)+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat((size-12) / 2)+"█".repeat(10)+"░".repeat((size-12) / 2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█"+"░".repeat(size-2)+"█"+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(Math.floor((WIDTH-size)/2))+"█".repeat(size)+"░".repeat(Math.floor((WIDTH-size)/2)),
-		"░".repeat(WIDTH),
-*/
 var WIDTH = 500;
 var HEIGHT = 500;
 
@@ -68,8 +20,7 @@ var offsetX = WIDTH / 2;
 var offsetY = HEIGHT / 2;
 
 var worldModel = new World(WIDTH,HEIGHT);
-
-	var size = Math.floor(Math.PI * WIDTH / 10);
+var size = Math.floor(Math.PI * WIDTH / 10);
 
 function spawnLine () {
 	var draw = [
